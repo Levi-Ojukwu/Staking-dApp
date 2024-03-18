@@ -10,13 +10,12 @@ const Stats = () => {
               Pools
             </Text>
             <Text as="div">
-              0
+              8
             </Text>
           </Flex>
           <Flex align="center" justify="between" mt={"2"}>
             <div>
               <Text weight={"bold"}>You will receive</Text>
-              {/* <Text>APR</Text> */}
             </div>
             <Text>NO. of Stakers</Text>
           </Flex>

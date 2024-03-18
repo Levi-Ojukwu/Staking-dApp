@@ -35,7 +35,8 @@ const useCreatePool = (rate) => {
       console.log("Approving", approveReceipt);
 
       if (approveReceipt.status) {
-        const createPool = await stakingPoolContract.createPool(rate);
+        const estimatedGas = await stakingPoolContract.createPool.estimateGas(100)
+        const createPool = await stakingPoolContract.createPool(rate, {gasLimit: estimatedGas});
 
         const createPoolReceipt = await createPool.wait();
         console.log("Creating", createPoolReceipt);

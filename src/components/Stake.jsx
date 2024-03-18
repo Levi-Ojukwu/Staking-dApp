@@ -1,8 +1,11 @@
 import { Box, Card, Flex, Text, TextField } from "@radix-ui/themes";
 import { useState } from "react";
+import useStake from "../hooks/useStake";
 
 const Stake = () => {
   const [amount, setAmount] = useState(0);
+  const [poolId, setPoolId] = useState(0);
+  const handleStake = useStake(poolId, amount);
 
   return (
     <Card
@@ -19,19 +22,23 @@ const Stake = () => {
             </Text>
             <TextField.Input
             className="rounded-2xl"
+              value={poolId}
+              onChange={(e) => setPoolId(e.target.value)}
+              placeholder="Enter Pool ID"
+            />
+            <TextField.Input
+            className="rounded-2xl"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
+              placeholder="Enter Stake Amount"
             />
             <button
               className="text-white bg-blue-400 py-1 px-4 rounded-2xl"
+              onClick={handleStake}
             >
-              Approve
+              Stake
             </button>
           </Flex>
-          {/* <Flex align="center" justify="between" mt="5">
-            <Text >Staked Amount</Text>
-            <Text weight="bold">ETH</Text>
-          </Flex> */}
           <Flex align="center" justify="between" mt="8">
             <Text>Staking Approval</Text>
             <Text weight="bold">0.5% Daily</Text>

@@ -14,10 +14,10 @@ const Pools = () => {
                 size="1"
                 style={{ width: 145, height: 110, backgroundColor: "#EFEFEF", marginTopTop: 2 }}
         >
-            <p>Pool:{id}</p>
-                <p>Amount Stake: 0</p>
-         <p>Reward Rate: 0</p> 
-            </Card>
+                <p>Pool:{id}</p>
+                    <p>Amount Stake: 0</p>
+                    <p>Reward Rate: 0</p> 
+                </Card>
     ) 
 })}
         </Flex>

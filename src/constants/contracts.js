@@ -15,3 +15,10 @@ export const RewardToken = (providerOrSigner) =>
     tokensAbi,
     providerOrSigner
   );
+
+  export const StakeToken = (providerOrSigner) =>
+  new ethers.Contract(
+    import.meta.env.VITE_STKN_contract_address,
+    tokensAbi,
+    providerOrSigner
+  );
